@@ -1,7 +1,7 @@
 
 const axios = require('axios');
 
-class CompanyService {
+module.exports = class CompanyService {
 
     async find(cnpj) {
         try {
