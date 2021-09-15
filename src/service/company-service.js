@@ -1,7 +1,7 @@
 
 const axios = require('axios')
-const BadRequestException = require('../core/badrequest-exception')
-const StatusCheck = require('../core/check-status')
+const BadRequestException = require('../core/exception/badrequest-exception')
+const StatusCheck = require('../core/util/check-status')
 
 module.exports = class CompanyService {
   async find (cnpj) {
