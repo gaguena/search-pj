@@ -3,6 +3,7 @@ const axios = require('axios')
 const BadRequestException = require('../core/exception/badrequest-exception')
 const StatusCheck = require('../core/util/check-status')
 const Company = require('../model/company-model')
+const moment = require('moment')
 
 module.exports = class CompanyService {
   async find (cnpj) {
