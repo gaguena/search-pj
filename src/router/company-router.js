@@ -1,6 +1,6 @@
 const express = require('express')
-const BadRequestException = require('../core/badrequest-exception')
-const CompanyService = require('./company-service')
+const BadRequestException = require('../core/exception/badrequest-exception')
+const CompanyService = require('../service/company-service')
 
 module.exports = app => {
   const router = express.Router()

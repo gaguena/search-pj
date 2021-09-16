@@ -1,7 +1,9 @@
 
 const axios = require('axios')
-const BadRequestException = require('../core/badrequest-exception')
-const StatusCheck = require('../core/check-status')
+const BadRequestException = require('../core/exception/badrequest-exception')
+const StatusCheck = require('../core/util/check-status')
+const Company = require('../model/company-model')
+const moment = require('moment')
 
 module.exports = class CompanyService {
   async find (cnpj) {
@@ -10,7 +12,7 @@ module.exports = class CompanyService {
       if (StatusCheck.isInvalid(data.situacao)) {
         throw BadRequestException(data.message)
       }
-      return data
+      return Company.save(data)
     } catch (error) {
       console.error(error)
     }
